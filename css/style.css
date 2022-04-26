@@ -1,0 +1,147 @@
+/* #region Default Styles and General Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1, h2, h3,
+p {
+  margin: 0;
+}
+/* #endregion */
+
+/* #region Navigation Bar Styling */
+
+.navbar {
+  background-color: rgb(255, 250, 179);
+  padding: 2rem 0;
+
+  /* Box Shadow */
+  box-shadow: 0 0 10em rgba(0,0,0,0.1);
+}
+.navbar ul {
+  /* Fixed Values */
+  margin: 0;
+  padding: 0;
+  
+  list-style-type: none;
+  /* Adds a responsive wrap */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em 0;
+
+  justify-content: center;
+  text-transform: uppercase;
+}
+.navbar ul > * {
+  margin: 0 .5rem;
+  padding: .5em;
+}
+.navbar a {
+  padding: .5em;
+  
+  color: var(--clr-text), #222;
+  border: 1px solid #222;
+  border-radius: .25em;
+
+  text-decoration: none;
+}
+.navbar a:focus,
+.navbar a:hover {
+  color: turquoise;
+  background-color: black;
+}
+
+/* Specific Nav Styling */
+.navbar li.active a {
+  border : 2px solid #222;
+}
+.navbar li:first-child {
+  text-transform: capitalize;
+  margin-right: auto;
+  font-size: 1.125em;
+}
+/* TODO : Add a responsive nav styling for max-width 600px only for the logo */
+/* #endregion */
+
+/* #region General Styling */
+.spacing > * + * {
+  margin-top: var(--spacer), 2rem;
+}
+.content {
+  width: 85%;
+  /* 65 em = 65 x 15 = 1000 around px */
+  max-width: 65em; 
+  margin: 0 auto;
+}
+.button {
+  display: inline-block;
+  text-decoration: none;
+  
+  color: var(--clr-text, #fff);
+  /* font-weight: 500; */
+  /* text-transform: uppercase; */
+  font-size: 1.125rem;
+
+  padding: .5em 1.25em;
+  background: var(--clr-accent, turquoise);
+
+  border-radius: .25em;
+
+  /* for hover effect */
+  transition: 
+    transform 250ms ease-in-out,
+    opacity 250ms radial,
+  ;
+}
+.button:hover,
+.button:focus {
+  transform: scale(1.1);
+  opacity: .7;
+}
+
+
+.main-title {
+  font-size: 3rem;
+  font-size: clamp(2rem, 5vw + 1 rem, 3.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.hero {
+  color: white;
+  text-align: center;
+  padding: 15em 0;
+
+  background: turquoise;
+  background-size: 100%;
+  /* background-size: clamp(80%, 100vw + 10%, 100%); */
+}
+@media screen and (max-width: 1100px) {
+  .hero{
+    background-size: 90em;
+  }
+}
+
+@supports (background-blend-mode: multiply){
+  .hero{
+    background-image:
+      url(../img/hero_bg_clean.jpg),
+      radial-gradient(#00ffe1,#b1a5a5);
+      background-blend-mode: multiply;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center center;
+  }
+}
+/* #endregion */
