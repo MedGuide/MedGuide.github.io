@@ -154,3 +154,24 @@ p {
   }
 }
 /* #endregion */
+
+/* #region Footer */
+.footer {
+  width : 100%;
+  padding: 2em;
+  text-align: center;
+}
+.company {
+  padding : .2em;
+  color: var(--clr-text), black;
+  text-decoration: none;
+  border: 1px solid #222;
+  border-radius: 15px;
+}
+.company:focus,
+.company:hover {
+  color : turquoise;
+  background-color: black;
+}
+
+/* #endregion */
