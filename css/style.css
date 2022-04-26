@@ -71,7 +71,16 @@ p {
   margin-right: auto;
   font-size: 1.125em;
 }
-/* TODO : Add a responsive nav styling for max-width 600px only for the logo */
+/* Responsive Nav Styling for Width 600 px */
+@media screen and (max-width: 600px) {
+  .navbar li:first-child {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    place-content: center;
+  }
+}
+
 /* #endregion */
 
 /* #region General Styling */
